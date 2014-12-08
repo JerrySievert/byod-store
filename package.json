@@ -1,0 +1,27 @@
+{
+  "name": "byod-store",
+  "version": "1.0.0",
+  "description": "Build Your Own Database, the Store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "byod",
+    "store",
+    "database"
+  ],
+  "author": "Jerry Sievert",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-lab": "^1.0.4",
+    "gulp-escomplex": "^1.0.1",
+    "gulp-escomplex-reporter-html": "^1.0.0",
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.0",
+    "vows": "^0.8.1",
+    "jshint-stylish": "^1.0.0",
+    "gulp-shell": "^0.2.11",
+    "istanbul": "^0.3.4"
+  }
+}
