@@ -7,6 +7,7 @@ var util = require('util');
 // inherit from a readable stream
 util.inherits(DirectoryStream, Readable);
 
+// streams the contents of a directory as a key/value pair
 function DirectoryStream (options) {
   // make sure to set to objectMode, this allows for key/value as objects
   options.objectMode = true;
@@ -40,6 +41,7 @@ DirectoryStream.prototype._read = function _read ( ) {
   }
 };
 
+// base Store object
 function Store (config) {
   // save the configuration
   this.config = config;
@@ -86,13 +88,21 @@ Store.prototype.get = function get (key, callback) {
   });
 };
 
+// delete an entry
 Store.prototype.del = function del (key, callback) {
   var filename = this.directory + path.sep + key;
 
-  fs.unlink(filename, callback);
+  try {
+    fs.unlinkSync(filename);
+  } catch (err) {
+    // silently ignore any errors
+  }
+
+  callback();
 };
 
-Store.prototype.scan = function scan (callback) {
+// returns a stream for scanning a directory
+Store.prototype.scan = function scan ( ) {
   // return a new DirectoryStream, that uses events data/end
   return new DirectoryStream({ directory: this.directory });
 };
