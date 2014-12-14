@@ -21,9 +21,8 @@ gulp.task('complexity', function () {
 
 gulp.task('jshint', function () {
   gulp.src([
-    'index.js',
-    'lib/*.js'
-    ])
+    'index.js'
+  ])
   .pipe(jshint({
       lookup: true
     }))
@@ -35,4 +34,4 @@ gulp.task('test', shell.task([
   './node_modules/istanbul/lib/cli.js cover ./node_modules/vows/bin/vows --spec'
 ]));
 
-  gulp.task('default', [ 'test', 'jshint', 'complexity' ]);
+gulp.task('default', [ 'test', 'jshint', 'complexity' ]);
