@@ -14,7 +14,6 @@
   "author": "Jerry Sievert",
   "license": "MIT",
   "devDependencies": {
-    "gulp-lab": "^1.0.4",
     "gulp-escomplex": "^1.0.1",
     "gulp-escomplex-reporter-html": "^1.0.0",
     "gulp": "^3.8.10",
